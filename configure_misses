@@ -1,0 +1,20 @@
+Configure miss: C# compiler
+Configure miss: if gcc/ld supports -Wl,--output-def
+Configure miss: x86_64-generic-linux-gnu-gcj
+Configure miss: dependency style of gcj
+Configure miss: if gcj PIC flag -fPIC works
+Configure miss: if gcj static flag -static works
+Configure miss: if gcj supports -c -o file.o
+Configure miss: if implementation in Java should be built
+Configure miss: if implementation in C# should be built
+Configure miss: C# compiler
+Configure miss: whether INT64_MAX == LONG_MAX
+Configure miss: whether UINT64_MAX == ULONG_MAX
+Configure miss: if gcc/ld supports -Wl,--output-def
+Configure miss: i686-generic-linux-gnu-gcj
+Configure miss: dependency style of gcj
+Configure miss: if gcj PIC flag -fPIC works
+Configure miss: if gcj static flag -static works
+Configure miss: if gcj supports -c -o file.o
+Configure miss: if implementation in Java should be built
+Configure miss: if implementation in C# should be built
