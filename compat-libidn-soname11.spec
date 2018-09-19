@@ -6,7 +6,7 @@
 #
 Name     : compat-libidn-soname11
 Version  : 1.33
-Release  : 1
+Release  : 2
 URL      : http://mirrors.kernel.org/gnu/libidn/libidn-1.33.tar.gz
 Source0  : http://mirrors.kernel.org/gnu/libidn/libidn-1.33.tar.gz
 Source99 : http://mirrors.kernel.org/gnu/libidn/libidn-1.33.tar.gz.sig
@@ -17,7 +17,6 @@ Requires: compat-libidn-soname11-bin
 Requires: compat-libidn-soname11-lib
 Requires: compat-libidn-soname11-license
 Requires: compat-libidn-soname11-data
-Requires: compat-libidn-soname11-locales
 Requires: compat-libidn-soname11-man
 BuildRequires : docbook-xml
 BuildRequires : emacs
@@ -119,14 +118,6 @@ Group: Default
 license components for the compat-libidn-soname11 package.
 
 
-%package locales
-Summary: locales components for the compat-libidn-soname11 package.
-Group: Default
-
-%description locales
-locales components for the compat-libidn-soname11 package.
-
-
 %package man
 Summary: man components for the compat-libidn-soname11 package.
 Group: Default
@@ -146,7 +137,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537307300
+export SOURCE_DATE_EPOCH=1537329616
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -165,10 +156,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 cd ../build32;
-make VERBOSE=1 V=1 %{?_smp_mflags} check || : || :
+make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1537307300
+export SOURCE_DATE_EPOCH=1537329616
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/compat-libidn-soname11
 cp COPYING %{buildroot}/usr/share/doc/compat-libidn-soname11/COPYING
@@ -188,7 +179,9 @@ popd
 fi
 popd
 %make_install
-%find_lang libidn
+## install_append content
+rm -rf %{buildroot}/usr/share/locale
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -295,7 +288,3 @@ popd
 %files man
 %defattr(-,root,root,-)
 %exclude /usr/share/man/man1/idn.1
-
-%files locales -f libidn.lang
-%defattr(-,root,root,-)
-
