@@ -6,7 +6,7 @@
 #
 Name     : compat-libidn-soname11
 Version  : 1.33
-Release  : 4
+Release  : 5
 URL      : http://mirrors.kernel.org/gnu/libidn/libidn-1.33.tar.gz
 Source0  : http://mirrors.kernel.org/gnu/libidn/libidn-1.33.tar.gz
 Source1 : http://mirrors.kernel.org/gnu/libidn/libidn-1.33.tar.gz.sig
